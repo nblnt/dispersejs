@@ -1,3 +1,3 @@
-exports.printMsg = function() {
-    console.log("This is a message from the disperseJS package");
-}
+import {disperse} from "./src/disperse.mjs";
+
+export default disperse;
