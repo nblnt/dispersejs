@@ -1,3 +1,3 @@
-import {disperse} from "./src/disperse.mjs";
+import {disperse} from "./src/disperse";
 
 export default disperse;
