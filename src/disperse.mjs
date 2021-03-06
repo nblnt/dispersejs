@@ -1,3 +1,5 @@
+import {getRandomInt} from "./util";
+
 export function disperse(stage, options, ...elements) {
     // get stage DOM element
     const stageDom = document.getElementById(stage);
@@ -18,16 +20,12 @@ export function disperse(stage, options, ...elements) {
                 e.style.position = 'absolute';
 
                 // get new coordinates for element
-                const nx = getRandomArbitrary(stageClientRect.left, stageClientRect.right - eClientRect.width);
-                const ny = getRandomArbitrary(stageClientRect.top, stageClientRect.bottom - eClientRect.height);
+                const nx = getRandomInt(stageClientRect.left, stageClientRect.right - eClientRect.width);
+                const ny = getRandomInt(stageClientRect.top, stageClientRect.bottom - eClientRect.height);
 
                 // set new position
                 e.style.transform = `translate(${nx}px,${ny}px)`;
             }
         }
     }
-}
-
-function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
 }
