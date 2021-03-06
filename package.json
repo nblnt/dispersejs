@@ -1,0 +1,24 @@
+{
+  "name": "dispersejs",
+  "version": "1.0.0",
+  "description": "Simple library to disperse DOM elements on the specified DOM target",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nblnt/dispersejs.git"
+  },
+  "keywords": [
+    "shuffle",
+    "disperse",
+    "blend"
+  ],
+  "author": "Bálint Nagy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nblnt/dispersejs/issues"
+  },
+  "homepage": "https://github.com/nblnt/dispersejs#readme"
+}
