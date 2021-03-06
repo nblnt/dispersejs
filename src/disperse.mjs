@@ -5,7 +5,7 @@ export function disperse(stage, options, ...elements) {
     let noOverlap = false;
 
     if (options && typeof options === 'object') {
-        noOverlap = options.noOverlap;
+        ({noOverlap} = options);
     }
 
     // get stage DOM element
