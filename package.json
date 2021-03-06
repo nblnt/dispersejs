@@ -10,11 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/nblnt/dispersejs.git"
   },
-  "keywords": [
-    "shuffle",
-    "disperse",
-    "blend"
-  ],
+  "keywords": [],
   "author": "Bálint Nagy",
   "license": "ISC",
   "bugs": {
