@@ -25,7 +25,8 @@ export function disperse(stage, options, ...elements) {
         return false;
     }
 
-    function randomDisperse(stageClientRect) {
+    function randomDisperse(stageDom) {
+        let stageClientRect = stageDom.getBoundingClientRect();
         let processedCount = 0;
         for (const element of elements) {
             // get element DOM
@@ -53,15 +54,12 @@ export function disperse(stage, options, ...elements) {
         }
     }
 
-    // get stage DOM element
+        // get stage DOM element
     const stageDom = document.getElementById(stage);
 
     if (stageDom) {
-        // get DOM rect of stage
-        const stageClientRect = stageDom.getBoundingClientRect();
-
         if (!evenly) {
-            randomDisperse(stageClientRect);
+            randomDisperse(stageDom);
         }
     }
 }
