@@ -3,13 +3,12 @@ import {checkOverlap, getRandomInt} from "./util";
 export function disperse(stage, options, ...elements) {
     // default options
     let noOverlap = false;
+    let evenly = false;
+    let excludeChildren = false;
 
     if (options && typeof options === 'object') {
-        ({noOverlap} = options);
+        ({noOverlap, evenly, excludeChildren} = options);
     }
-
-    // get stage DOM element
-    const stageDom = document.getElementById(stage);
 
     function checkOverlaps(nx, ny, width, height, processed) {
         const clientRects = [];
@@ -26,10 +25,7 @@ export function disperse(stage, options, ...elements) {
         return false;
     }
 
-    if (stageDom) {
-        // get DOM rect of stage
-        const stageClientRect = stageDom.getBoundingClientRect();
-
+    function randomDisperse(stageClientRect) {
         let processedCount = 0;
         for (const element of elements) {
             // get element DOM
@@ -54,6 +50,18 @@ export function disperse(stage, options, ...elements) {
                 e.style.transform = `translate(${nx}px,${ny}px)`;
             }
             processedCount++;
+        }
+    }
+
+    // get stage DOM element
+    const stageDom = document.getElementById(stage);
+
+    if (stageDom) {
+        // get DOM rect of stage
+        const stageClientRect = stageDom.getBoundingClientRect();
+
+        if (!evenly) {
+            randomDisperse(stageClientRect);
         }
     }
 }
